@@ -1,24 +1,9 @@
 {
   "users": [
     {
-      "email": "olivi2er@mail.com",
-      "password": "$2a$10$yGna9RF.b16Bzm6l04jLR.yc80mSpL/CHnuJPpiTURtJd8qHOl736",
-      "id": 1
-    },
-    {
-      "email": "olivi2er11@mail.com",
-      "password": "$2a$10$uYD5frGMSNbYCJbXzewptelP1bcJPs9pXK948JBVtrt4dvTgLfy5e",
-      "id": 2
-    },
-    {
-      "email": "olivi2er5@mail.com",
-      "password": "$2a$10$NcSf3r3l6uGILf12Orc9suE/2xaiqwy8XDS8xoD9k/JhuO40boRdy",
-      "id": 3
-    },
-    {
-      "email": "olivi2er6@mail.com",
-      "password": "$2a$10$VA8QrTeBbljmvzg8HsnYNuZ1v6liv6merHv8E2W.cxOtJSbmMkCv2",
-      "id": 4
+      "email": "user2@gmail.com",
+      "password": "$2a$10$RrG26e9bXyhldxj2/jP9FubM9WxyHwkrv0KI.0FaimrT.43cPz5Ai",
+      "id": 5
     }
   ],
   "views": [
@@ -38,21 +23,6 @@
       "description": "紫坪位在綠島最南方，從附近的步道，可通往海岸邊的潟湖。此處是由珊瑚礁構成的潮池，也是綠島著名的潟湖所在地，有全綠島最完整的潟湖地形以及珊瑚礁植群，更有茂盛的植物水芫花和珍貴的陸寄居蟹。"
     }
   ],
-  "collects": [
-    {
-      "id": 2,
-      "name": "哈巴狗與睡美人岩",
-      "description": "睡美人岩與哈巴狗岩靜臥在海參坪上，是綠島最著名的景點之一，從小長城步道遠眺，可以見到睡美人靜靜地躺臥在海面上，白色的沙灘是她秀麗的長髮，而垂著長耳朵的哈巴狗靜臥在不遠處。天氣晴朗時，從遠處眺望哈巴狗與睡美人，可以有許多有趣的「錯位」拍攝玩法！堪稱是綠島最著名的景點。",
-      "userId": "null",
-      "haveCollect": true
-    },
-    {
-      "id": 1,
-      "name": "帆船鼻大草原",
-      "description": "帆船鼻位於綠島東南角，有「綠島地毯」之稱，由於地形突出，地勢又高出四周，屬東北季季風可長驅直入的衝風帶；再加上後天的放牧，遂形成低草原景觀。草原邊緣懸崖可以俯視朝日溫泉與海參坪，也是綠島居高臨下欣賞日出、月昇，沐浴海風的最佳景點之一。",
-      "userId": "3",
-      "haveCollect": true
-    }
-  ],
-  "admin":[]
+  "collects": [],
+  "admin": []
 }
