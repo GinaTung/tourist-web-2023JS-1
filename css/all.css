@@ -1,0 +1,10 @@
+.container {
+    max-width: 1296px;
+    margin: 0 auto;
+}
+/* .已收藏状态的样式 */
+.collected {
+    /* 已收藏时的样式 */
+    background: #6c757d;
+    color: #fff;
+  }

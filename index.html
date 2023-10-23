@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+
+<body>
+    <div class="header m-2 d-flex justify-content-between">
+        <h1 class="title my-3">
+            <a href="index.html" class="text-decoration-none text-black" type="button">景點收藏管理網站</a>
+        </h1>
+    </div>
+    <div class="container h-100">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <a class="btn btn-primary my-3 py-3 " href="#" id="viewListBtn">景觀列表</a>
+            <a class="btn btn-primary my-3 py-3" href="logIn.html">一般使用者</a>
+            <a class="btn btn-primary my-3 py-3">後臺管理者</a>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <script src="js/config.js"></script>
+        <script src="js/viewListBtn.js"></script>
+</html>
