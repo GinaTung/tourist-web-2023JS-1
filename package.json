@@ -1,7 +1,7 @@
 {
-  "name": "json-server-vercel-2023",
+  "name": "tourist-web-2023",
   "version": "1.0.0",
-  "description": "Deploy JSON Server to Vercel",
+  "description": "Deploy tourist-web",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
