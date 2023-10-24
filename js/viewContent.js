@@ -3,8 +3,11 @@ const collectBtn = document.querySelector("#collectBtn");
 const menu =document.querySelector(".menu");
 const urlParams = new URLSearchParams(window.location.search);
 const idParam = urlParams.get('id');
-const userId = urlParams.get('userId');
-console.log(idParam,userId);
+const userId2 = urlParams.get('userId');
+
+const title =document.querySelector(".title");
+const roleData2 = urlParams.get("role");
+console.log(idParam,userId2,roleData2);
 let data = [];
 let listItem; // 在外部定义listItem变量
 let favoriteProducts =[];
@@ -30,17 +33,33 @@ function getViewsContent() {
 function checkLoggedIn2() {
   if (token) {
     renderProtectedData();
-  } 
+    renderProtectedData2();
+  } else{
+    renderDefaultedData2();
+  }
 }
 function renderProtectedData(){
   let str ="";
   str=`
-  <a class="btn btn-primary" href="collectList.html?userId=${userId}" type="button">收藏</a>
+  <a class="btn btn-primary" href="collectList.html?userId=${userId2}" type="button">收藏</a>
   <a class="btn btn-primary" id="logOutBtn" href="#" type="button">登出</a>
   `
   menu.innerHTML=str;
 }
-
+function renderProtectedData2() {
+  let str = "";
+  str = `
+  <a href="viewsList.html?userId=${userId2}&role=${roleData2}&token=${token}" class="text-decoration-none text-black" type="button">景點收藏管理網站</a>
+  `;
+  title.innerHTML = str;
+}
+function renderDefaultedData2() {
+  let str = "";
+  str = `
+  <a href="viewsList.html" class="text-decoration-none text-black" type="button">景點收藏管理網站</a>
+  `;
+  title.innerHTML = str;
+}
 function renderData2() {
   listItem = {
     id: data.id,
@@ -54,7 +73,7 @@ function renderData2() {
 
 function getCollect() {
   axios
-    .get(`${url}/collects?userId=${userId}`)
+    .get(`${url}/collects?userId=${userId2}`)
     .then(function (response) {
       console.log(response.data);
       dataCollect = response.data;

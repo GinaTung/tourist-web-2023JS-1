@@ -2,10 +2,10 @@ const viewsList = document.querySelector(".viewsList");
 const menu = document.querySelector(".menu");
 const title =document.querySelector(".title");
 const urlParams = new URLSearchParams(window.location.search);
-const userId = urlParams.get("userId");
-const roleData = urlParams.get("role");
+const userId2 = urlParams.get("userId");
+const roleData2 = urlParams.get("role");
 // console.log(id);
-console.log(userId,roleData);
+console.log(userId2,roleData2);
 let data = [];
 
 function getViews() {
@@ -50,7 +50,7 @@ function checkLoggedIn2() {
 function renderProtectedData() {
   let str = "";
   str = `
-  <a class="btn btn-primary" href="collectList.html?userId=${userId}" type="button">收藏</a>
+  <a class="btn btn-primary" href="collectList.html?userId=${userId2}" type="button">收藏</a>
   <a class="btn btn-primary" id="logOutBtn" href="#" type="button">登出</a>
   `;
   menu.innerHTML = str;
@@ -58,7 +58,7 @@ function renderProtectedData() {
 function renderProtectedData2() {
   let str = "";
   str = `
-  <a href="viewsList.html?userId=${userId}&token=${token}" class="text-decoration-none text-black" type="button">景點收藏管理網站</a>
+  <a href="viewsList.html?userId=${userId2}&role=${roleData2}&token=${token}" class="text-decoration-none text-black" type="button">景點收藏管理網站</a>
   `;
   title.innerHTML = str;
 }
@@ -72,9 +72,9 @@ function renderDefaultedData2() {
 function renderProtectedData3() {
   let str = "";
   str = `
-  <a class="btn btn-outline-primary" href="adminPage.html?userId=${userId}&token=${token}&role=${roleData}" type="button">回到後台</a>
-  <a class="btn btn-outline-primary" href="viewsList.html?userId=${userId}&token=${token}&role=${roleData}" type="button">回到首頁</a>
-  <a class="btn btn-outline-primary" href="adminUpdate.html?userId=${userId}&token=${token}&role=${roleData}" type="button">新增景點</a>
+  <a class="btn btn-outline-primary" href="adminPage.html?userId=${userId2}&role=${roleData2}&token=${token}" type="button">回到後台</a>
+  <a class="btn btn-outline-primary" href="viewsList.html?userId=${userId2}&role=${roleData2}&token=${token}" type="button">回到首頁</a>
+  <a class="btn btn-outline-primary" href="adminUpdate.html?userId=${userId2}&role=${roleData2}&token=${token}" type="button">新增景點</a>
   <a class="btn btn-primary" id="logOutBtn" href="#" type="button">登出</a>
   `;
   menu.innerHTML = str;
@@ -108,7 +108,7 @@ function renderData2() {
               <p class="d-inline-block text-truncate w-75">${item.description}</p>
           </div>
           <div class="card-footer bg-white border-0">
-              <a href="viewContent.html?id=${item.id}&userId=${userId}" class="btn btn-primary">看詳細</a>
+              <a href="viewContent.html?id=${item.id}&userId=${userId2}&role=${roleData2}" class="btn btn-primary">看詳細</a>
           </div>
       </div>
   </li>`;

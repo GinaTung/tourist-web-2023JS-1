@@ -2,8 +2,10 @@ const collectCardList = document.querySelector(".collectCardList");
 const menu =document.querySelector(".menu");
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get('userId');
+const roleData2 = urlParams.get("role");
+const title =document.querySelector(".title");
 // console.log(id);
-console.log(userId);
+console.log(userId,roleData2);
 let data = [];
 
 function getCollect() {
@@ -26,7 +28,10 @@ function getCollect() {
 function checkLoggedIn2() {
   if (token) {
     renderProtectedData();
-  } 
+    renderProtectedData2();
+  } else{
+    renderDefaultedData2();
+  }
 }
 function renderProtectedData(){
   let str ="";
@@ -36,7 +41,20 @@ function renderProtectedData(){
   `
   menu.innerHTML=str;
 }
-
+function renderProtectedData2() {
+  let str = "";
+  str = `
+  <a href="viewsList.html?userId=${userId}&role=${roleData2}&token=${token}" class="text-decoration-none text-black" type="button">景點收藏管理網站</a>
+  `;
+  title.innerHTML = str;
+}
+function renderDefaultedData2() {
+  let str = "";
+  str = `
+  <a href="viewsList.html" class="text-decoration-none text-black" type="button">景點收藏管理網站</a>
+  `;
+  title.innerHTML = str;
+}
 function deleteCollect(id) {
   axios
     .delete(`${url}/collects/${id}`)
@@ -79,7 +97,7 @@ function renderData4() {
             <a class="btn btn-outline-secondary collectBtn2" type="button" href="#" data-id=${item.id}>
               ${item.haveCollect ? "已收藏" : "已刪除"}
             </a>
-            <a href="viewContent.html?id=${item.id}&userId=${userId}" class="btn btn-primary">看詳細</a>
+            <a href="viewContent.html?id=${item.id}&userId=${userId}&role=${roleData2}" class="btn btn-primary">看詳細</a>
           </div>
         </div>
       </li>`;
