@@ -19,6 +19,8 @@ editViewBtn.addEventListener('click', function(e) {
     .then(function(response) {
       console.log(response.data);
       // 在這裡可以處理修改成功的相應
+      alert("修改成功!");
+      window.location.href = `adminPage.html?userId=${userId}&role=${roleData}&token=${token}`;
     })
     .catch(function(err) {
       console.log(err.response.message);

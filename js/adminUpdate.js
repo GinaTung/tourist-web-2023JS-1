@@ -14,6 +14,8 @@ addViewBtn.addEventListener('click',function(e){
     axios.post(`${url}/views`,obj)
     .then(function(response){
         console.log(response.data);
+        alert("新增成功!");
+        window.location.href = `adminPage.html?userId=${userId}&role=${roleData}&token=${token}`;
     })
     .catch(function (err) {
         console.log(err.response.message);
