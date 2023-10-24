@@ -1,6 +1,6 @@
 const viewContent = document.querySelector(".viewContent");
 const collectBtn = document.querySelector("#collectBtn");
-const menu2 =document.querySelector(".menu");
+const menu =document.querySelector(".menu");
 const urlParams = new URLSearchParams(window.location.search);
 const idParam = urlParams.get('id');
 const userId = urlParams.get('userId');

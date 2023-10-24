@@ -6,8 +6,7 @@ const signUpBtn = document.querySelector('#signUpBtn');
 signUpBtn.addEventListener('click', function(e){
     const email = emailInput.value;
     const password = passwordInput.value;
-    const isChecked = check.checked; // 获取复选框的状态
-    if (email === "" || password === "" || !isChecked) {
+    if (email === "" || password === "") {
         alert("請輸入內容");
         return;
     }
@@ -28,5 +27,4 @@ signUpBtn.addEventListener('click', function(e){
 
     emailInput.value = "";
     passwordInput.value = "";
-    check.checked = false; // 清除复选框的选中状态
 });

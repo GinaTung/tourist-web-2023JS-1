@@ -1,5 +1,8 @@
-const menu =document.querySelector(".menu");
-
+const menu2 =document.querySelector(".menu2");
+const menu3 = document.querySelector(".menu3");
+const urlParams2 = new URLSearchParams(window.location.search);
+const userId = urlParams2.get("userId");
+const roleData = urlParams2.get("role");
 // const token = localStorage.getItem("token");
 function checkLoggedIn() {
     if (!token) {
@@ -11,6 +14,9 @@ function checkLoggedIn() {
             // 用户已登录，获取受保护资源
       // fetchProtectedData(token);
       // renderProtectedData();
+      if (roleData === "admin") {
+        renderProtectedData3();
+      }
       collectBtn.style.display = "inline-block";
     }
   }
@@ -50,7 +56,7 @@ function checkLoggedIn() {
     <a class="btn btn-primary" href="collectList.html" type="button">收藏</a>
     <a class="btn btn-primary" id="logOutBtn" href="#" type="button">登出</a>
     `
-    menu.innerHTML=str;
+    menu2.innerHTML=str;
   }
   function renderDefaultData(){
     let str2 ="";
@@ -58,7 +64,19 @@ function checkLoggedIn() {
     <a class="btn btn-primary" href="signUp.html">註冊</a>
     <a class="btn btn-primary" href="logIn.html" tabindex="-1" aria-disabled="true">登入</a>
     `
-    menu.innerHTML=str2;
+    menu2.innerHTML=str2;
   }
+  function renderProtectedData3() {
+    let str = "";
+    str = `
+    <a class="btn btn-outline-primary" href="adminPage.html?userId=${userId}&token=${token}&role=${roleData}" type="button">回到後台</a>
+    <a class="btn btn-outline-primary" href="viewsList.html?userId=${userId}&token=${token}&role=${roleData}" type="button">回到首頁</a>
+    <a class="btn btn-outline-primary" href="adminUpdate.html?userId=${userId}&token=${token}&role=${roleData}" type="button">新增景點</a>
+    <a class="btn btn-primary" id="logOutBtn" href="#" type="button">登出</a>
+    `;
+    menu3.innerHTML = str;
+  }
+
+
   checkLoggedIn();
   

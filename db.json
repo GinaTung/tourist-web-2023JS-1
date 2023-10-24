@@ -3,7 +3,14 @@
     {
       "email": "user2@gmail.com",
       "password": "$2a$10$RrG26e9bXyhldxj2/jP9FubM9WxyHwkrv0KI.0FaimrT.43cPz5Ai",
-      "id": 5
+      "id": 5,
+      "role": "user"
+    },
+    {
+      "email": "user3@gmail.com",
+      "password": "$2a$10$WzgsPsrszQezvhvUUC0CfuzOEmA0bF8v/wJRO9s6y45ypu995FFEq",
+      "id": 6,
+      "role": "admin"
     }
   ],
   "views": [

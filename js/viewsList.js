@@ -1,10 +1,11 @@
 const viewsList = document.querySelector(".viewsList");
-const menu2 = document.querySelector(".menu");
+const menu = document.querySelector(".menu");
 const title =document.querySelector(".title");
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get("userId");
+const roleData = urlParams.get("role");
 // console.log(id);
-console.log(userId);
+console.log(userId,roleData);
 let data = [];
 
 function getViews() {
@@ -39,7 +40,10 @@ function checkLoggedIn2() {
   if (token) {
     renderProtectedData();
     renderProtectedData2();
-  }else{
+    if (roleData === "admin") {
+      renderProtectedData3();
+    }
+  } else {
     renderDefaultedData2();
   }
 }
@@ -54,16 +58,26 @@ function renderProtectedData() {
 function renderProtectedData2() {
   let str = "";
   str = `
-  <a href="index.html?userId=${userId}&token=${token}" class="text-decoration-none text-black" type="button">景點收藏管理網站</a>
+  <a href="viewsList.html?userId=${userId}&token=${token}" class="text-decoration-none text-black" type="button">景點收藏管理網站</a>
   `;
   title.innerHTML = str;
 }
 function renderDefaultedData2() {
   let str = "";
   str = `
-  <a href="index.html" class="text-decoration-none text-black" type="button">景點收藏管理網站</a>
+  <a href="viewsList.html" class="text-decoration-none text-black" type="button">景點收藏管理網站</a>
   `;
   title.innerHTML = str;
+}
+function renderProtectedData3() {
+  let str = "";
+  str = `
+  <a class="btn btn-outline-primary" href="adminPage.html?userId=${userId}&token=${token}&role=${roleData}" type="button">回到後台</a>
+  <a class="btn btn-outline-primary" href="viewsList.html?userId=${userId}&token=${token}&role=${roleData}" type="button">回到首頁</a>
+  <a class="btn btn-outline-primary" href="adminUpdate.html?userId=${userId}&token=${token}&role=${roleData}" type="button">新增景點</a>
+  <a class="btn btn-primary" id="logOutBtn" href="#" type="button">登出</a>
+  `;
+  menu.innerHTML = str;
 }
 function renderData() {
   let str = "";
